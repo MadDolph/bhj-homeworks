@@ -1,6 +1,4 @@
 const menuItem = document.getElementsByClassName('menu__link');
-const allMenu = document.querySelectorAll('ul');
-let allMenuArray = Array.from(allMenu);
 let menuArray = Array.from(menuItem);
 for(let i = 0; i < menuArray.length; i++) {
     menuArray[i].onclick = () => {
@@ -9,13 +7,12 @@ for(let i = 0; i < menuArray.length; i++) {
         if(includeMenu.classList.contains('menu_active')) {            
             includeMenu.classList.remove('menu_active');
         } else if (includeMenu !== null) {
-            for(let j = 0; j < allMenuArray.length; j++) {
-                if(!allMenuArray[j].classList.contains('menu_main')) {
-                    allMenuArray[j].classList.remove('menu_active');
-                }
+            const closeSubMenu = document.querySelector('ul.menu.menu_sub.menu_active');
+            if(closeSubMenu) {
+                closeSubMenu.classList.remove('menu_active');            
             }
             includeMenu.classList.add('menu_active');
             }
-            return false;
+          return false;
         }         
 }

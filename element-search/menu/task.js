@@ -6,13 +6,15 @@ for(let i = 0; i < menuArray.length; i++) {
         const includeMenu = parentEl.querySelector('ul');
         if(includeMenu.classList.contains('menu_active')) {            
             includeMenu.classList.remove('menu_active');
+            return false;
         } else if (includeMenu !== null) {
             const closeSubMenu = document.querySelector('ul.menu.menu_sub.menu_active');
             if(closeSubMenu) {
                 closeSubMenu.classList.remove('menu_active');            
             }
             includeMenu.classList.add('menu_active');
+            return false;
             }
-          return false;
+          
         }         
 }

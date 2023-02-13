@@ -25,7 +25,7 @@
 Те, которые имеют вложенное меню:
 
 ```html
-<li class="menu__item">
+<li class="menu__item ">
     <a href="" class="menu__link">О компании</a>
     <ul class="menu menu_sub">
         <li class="menu__item">

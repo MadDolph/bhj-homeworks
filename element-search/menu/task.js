@@ -8,7 +8,7 @@ for(let i = 0; i < menuArray.length; i++) {
             includeMenu.classList.remove('menu_active');
             return false;
         } else if (includeMenu !== null) {
-            const closeSubMenu = document.querySelector('ul.menu.menu_sub.menu_active');
+            const closeSubMenu = document.querySelector('.menu_active');
             if(closeSubMenu) {
                 closeSubMenu.classList.remove('menu_active');            
             }

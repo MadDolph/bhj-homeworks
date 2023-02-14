@@ -5,6 +5,7 @@ const dots = document.getElementsByClassName('slider__dot');
 let dotsArray = Array.from(dots);
 let slidesArray = Array.from(slides);
 let activeSlide = 0;
+dotsArray[activeSlide].classList.add('slider__dot_active');
 rightButton.onclick = () => {
     leaf("right");
 }
@@ -32,18 +33,24 @@ function leaf(direction) {
 }
 for(let i = 0; i < dotsArray.length; i++) {
     dotsArray[i].onclick = () => {
-        slidesArray[activeSlide].classList.remove('slider__item_active');
+        dotsArray.forEach(function(item, i, dotsArray){
+            item.classList.remove('slider__dot_active');
+        })
+        slideManager("hid", activeSlide);
         activeSlide = i;
-        slidesArray[activeSlide].classList.add('slider__item_active');
+        slideManager("show", activeSlide);
+        dotsArray[i].classList.add('slider__dot_active');
     }
 }
 function slideManager(flag, id) {
     switch(flag) {
         case "show":
             slidesArray[id].classList.add('slider__item_active');
+            dotsArray[id].classList.add('slider__dot_active');
             break;
         case "hid":
             slidesArray[id].classList.remove('slider__item_active');
+            dotsArray[id].classList.remove('slider__dot_active');
             break;
     }
     return;

@@ -1,6 +1,6 @@
 const rightButton = document.querySelector('.slider__arrow_next');
 const leftButton = document.querySelector('.slider__arrow_prev');
-const slides = document.getElementsByClassName('slider__item');
+const slides = document.querySelectorAll('.slider__item');
 let slidesArray = Array.from(slides);
 let activeSlide = 0;
 rightButton.onclick = () => {

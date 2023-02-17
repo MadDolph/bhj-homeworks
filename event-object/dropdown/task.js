@@ -11,7 +11,7 @@ button.addEventListener('click', e => {
         button.querySelector('.dropdown__value').textContent = e.target.textContent;
         drop_collapse();
     }
-    e.preventDefault();
+    e.preventDefault(); //Вот этого в лекции не было и было потрачено ОВЕРДО*** времени! Это pZ! минусую нетологии за это
 });
 function drop_collapse() {
     if(!menu.drop) {

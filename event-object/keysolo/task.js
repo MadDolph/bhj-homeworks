@@ -17,7 +17,7 @@ class Game {
   }
 
   registerEvents() {
-    addEventListener("keypress", e => {
+    addEventListener("keypress", (e) => {
       if(this.currentSymbol.innerText.toUpperCase() === e.key.toUpperCase()) {
         this.success();
       } else {

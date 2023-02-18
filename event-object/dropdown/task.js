@@ -3,7 +3,7 @@ const menu = document.querySelector('.dropdown__list');
 const menuItem = document.getElementsByClassName("dropdown__item");
 let itemArray = Array.from(menuItem);
 menu.drop = false;
-button.addEventListener('click', e => {
+button.addEventListener('click', (e) => {
     if(e.target.className === 'dropdown__value') {
         drop_collapse();
     }

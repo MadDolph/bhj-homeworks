@@ -1,5 +1,6 @@
 const chatWidget = document.querySelector(".chat-widget")
 const chatInput = document.getElementById('chat-widget__input');
+const chatContainer = document.querySelector('.chat-widget__messages-container');
 const messages = document.querySelector( '.chat-widget__messages');
 let date;
 let randomMessage = ['меня будить????', 
@@ -28,7 +29,9 @@ chatInput.addEventListener('keypress', (e) => {
             <div class="message__time">${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}</div>
             <div class="message__text">${randomMessage[Math.round(Math.random() * (randomMessage.length - 0) + 0)]}</div>
             </div>
-        `;        
+        `;
+        chatInput.value = null;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 })
 

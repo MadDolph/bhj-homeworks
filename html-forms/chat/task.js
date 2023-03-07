@@ -35,7 +35,6 @@ chatInput.addEventListener('keypress', (e) => {
         chatInput.value = null;
     }
 })
-
 function botAnswer() {
     date = new Date();
     messages.innerHTML += `

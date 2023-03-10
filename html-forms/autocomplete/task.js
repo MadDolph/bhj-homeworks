@@ -69,7 +69,7 @@ class Autocomplete {
 
   getMatches( text ) {
     let array = [];
-    let values = this.input.options;
+    let values = Array.from(this.input.options);
     for(let el of values) {
       if(el.innerText.toLowerCase().includes(text.toLowerCase())) {
         array.push({

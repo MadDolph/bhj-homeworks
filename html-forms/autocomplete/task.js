@@ -71,7 +71,7 @@ class Autocomplete {
     let array = [];
     let values = this.input.options;
     for(let el of values) {
-      if(el.innerText.includes(text)) {
+      if(el.innerText.toLowerCase().includes(text.toLowerCase())) {
         array.push(el);
       }
     }

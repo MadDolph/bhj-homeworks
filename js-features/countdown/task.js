@@ -1,23 +1,24 @@
 const sTimer = document.getElementById("timer");
-timeMinutes = parseInt(sTimer.textContent);
+let timeInSeconds = parseInt(sTimer.textContent);
 function countdown() {
-  let seconds = timeMinutes % 60;
-  let minutes = timeMinutes / 60 % 60;
-  let hours = timeMinutes / 60 / 60 % 60;
-  if(parseInt(timeMinutes) < 0) {
+  let seconds = timeInSeconds % 60;
+  let minutes = timeInSeconds / 60 % 60;
+  let hours = timeInSeconds / 60 / 60 % 60;
+  if(parseInt(timeInSeconds) < 0) {
     window.alert("Вы победили в конкурсе!");
-    clearInterval(countDown);
+    clearInterval(count);
   } else {
-          sTimer.textContent = `${addZero(Math.trunc(hours))}:${addZero(Math.trunc(minutes))}:${addZero(seconds)}`;
-          --timeMinutes;
-         }
+    sTimer.textContent = `${addZero(Math.trunc(hours))}:${addZero(Math.trunc(minutes))}:${addZero(seconds)}`;
+    --timeInSeconds;
+  }
 }
 
-function addZero(source) {
-  let text = source + '';
-  if(text.length < 2) {
-    text = '0' + text;
+function addZero(num) {
+  let str = num + '';
+  if(str.length < 2) {
+    str = '0' + str;
   }
-  return text;
+  return str;
 }
-let countDown = setInterval(countdown, 1000);
+
+let count = setInterval(countdown, 1000);

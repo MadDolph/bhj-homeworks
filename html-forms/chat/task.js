@@ -21,7 +21,7 @@ chatWidget.addEventListener('click', (e) => {
     }
 })
 chatInput.addEventListener('keypress', (e) => {
-    if(e.keyCode == 13 && chatInput.value != '') {
+    if(e.keyCode == 13 && chatInput.value.trim() != '') {
         date = new Date();
         messages.innerHTML += `
             <div class="message message_client">

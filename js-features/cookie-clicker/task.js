@@ -1,16 +1,13 @@
 const counter = document.getElementById("clicker__counter");
-const cookie = document.getElementById("cookie");
-clicker = parseInt(counter.textContent);
+const cookies = document.getElementById("cookie");
 
-cookie.onclick = () => {
-    if (clicker % 2 == 0) {
-        cookie.width = 250;
-        clicker++;
-        counter.textContent = clicker;
+cookies.onclick = function () {
+    counter.textContent++
+    if (counter.textContent % 2 != 0) {
+        cookies.width = cookies.width * 2;
     } else {
-        cookie.width = 200;
-        clicker++;
-        counter.textContent = clicker;
+        cookies.width = cookies.width / 2;
     }
-    return false;
+    
 }
+

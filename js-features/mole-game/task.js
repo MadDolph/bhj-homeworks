@@ -1,4 +1,4 @@
-const holes = document.getElementsByClassName('hole');
+const holes = Array.from(document.getElementsByClassName('hole'));
 const dead = document.getElementById('dead');
 const loose = document.getElementById('lost');
 let kills = 0;
